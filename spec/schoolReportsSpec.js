@@ -11,4 +11,9 @@ describe('school report', function() {
     var schoolReport = new Report;
     expect(schoolReport.calculate('green')).toEqual('green: 1');
   });
+
+  it('returns "green: 2" for input of "green, green"', function() {
+    var schoolReport = new Report;
+    expect(schoolReport.calculate('green, green')).toEqual('green: 2');
+  });
 });

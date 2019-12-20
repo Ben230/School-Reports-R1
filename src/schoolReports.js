@@ -2,14 +2,22 @@ function Report() {
   this.greenCounter = 0;
 };
 
-Report.prototype.calculate = function(grade) {
-  if (grade === "green") {
-    this.greenCounter += 1;
+Report.prototype.calculate = function(grades) {
+  if (grades === '') {
+    return ''
   } else {
-    return '';
+    const gradesArr = grades.split(', ');
+
+    for (var i=0;i<gradesArr.length;i++){
+      if (gradesArr[i] === 'green') {
+        this.greenCounter += 1;
+      }
+    }
+
+
+    return 'green: ' + this.greenCounter;
   }
 
-  return 'green: ' + this.greenCounter;
 
 };
 
